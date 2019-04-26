@@ -12,6 +12,9 @@
 %
 % This work has the LPPL maintenance status `maintained'.
 %
+% TODO: 原创性声明修正
+%       
+%
 % \fi
 %
 % \iffalse
@@ -138,14 +141,14 @@
 % \IndexPrologue{\section{\indexname}}
 % \GlossaryPrologue{\section{\glossaryname}}
 %
-% \title{\bfseries\color{violet}\thuthesis：清华大学学位论文模板}
+% \title{\bfseries\color{violet}\thuthesis：北京工业大学学位论文模板}
 % \author{{\fangsong 薛瑞尼}\\[5pt]\texttt{xueruini@gmail.com}}
 % \date{v\fileversion\ (\filedate)}
 % \maketitle\thispagestyle{empty}
 %
 %
 % \begin{abstract}\noindent
-%   此宏包旨在建立一个简单易用的清华大学学位论文模板，包括本科综合论文训练、硕士
+%   此宏包旨在建立一个简单易用的北京工业大学学位论文模板，包括本科综合论文训练、硕士
 %   论文、博士论文以及博士后出站报告。
 % \end{abstract}
 %
@@ -952,7 +955,7 @@
 % \shuji[同时修改标题和作者的标题][尼瑞薛]
 %
 % % 如果标题中有英文，那可以参考如下方法进行微调：
-% \shuji[清华大学 \raisebox{-5pt}{\LaTeX} 论文模板 \raisebox{-5pt}{v\version} 样例]
+% \shuji[北京工业大学 \raisebox{-5pt}{\LaTeX} 论文模板 \raisebox{-5pt}{v\version} 样例]
 % \end{document}
 % \end{latex}
 %
@@ -1714,8 +1717,10 @@
   \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{thu@plain}{%
   \fancyhead{}
-  \fancyfoot[C]{\xiaowu\thepage}
-  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[C]{\lishu \sanhao 北京工业大学毕业设计（论文）}
+  \fancyfoot{}
+  \fancyfoot[C]{\wuhao\thepage}
+  \renewcommand{\headrulewidth}{1pt}
   \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{thu@headings}{%
   \fancyhead{}
@@ -2441,8 +2446,8 @@
   \def\thu@secretlevel{秘密}
 \fi
 \def\thu@secretyear{\the\year}
-\def\thu@schoolname{清华大学}
-\def\thu@bachelor@subtitle{综合论文训练}
+\def\thu@schoolname{北京工业大学}
+\def\thu@bachelor@subtitle{毕业论文}
 \def\thu@bachelor@title@pre{题目}
 \def\thu@postdoctor@date@title{研究起止日期}
 \ifthu@postdoctor
@@ -2460,7 +2465,7 @@
   \unskip\ifthu@master$\bigstar$ \fi%
   \ifthu@doctor$\bigstar$ \fi%
   \thu@secretyear 年}
-\def\thu@apply{（申请清华大学\thu@cdegree 学位论文）}
+\def\thu@apply{（申请北京工业大学\thu@cdegree 学位论文）}
 \ifthu@bachelor
   \def\thu@department@title{系别}
   \def\thu@major@title{专业}
@@ -2487,13 +2492,15 @@
 \newcommand{\thu@authtitle}{关于学位论文使用授权的说明}
 \newcommand{\thu@authorization}{%
 \ifthu@bachelor
-本人完全了解清华大学有关保留、使用学位论文的规定，即：学校有权保留学位
-论文的复印件，允许该论文被查阅和借阅；学校可以公布该论文的全部或部分内
-容，可以采用影印、缩印或其他复制手段保存该论文。
-\else
-本人完全了解清华大学有关保留、使用学位论文的规定，即：
+本人完全了解北京工业大学有关保留、使用学位论文的规定，即：学校有权保留送交论文的
+复印件，允许论文被查阅和借阅；学校可以公布论文的全部或部分内容，可以采用影印、缩
+印或其他复制手段保存论文。
+（保密的论文在解密后应遵守此规定）
 
-清华大学拥有在著作权法规定范围内学位论文的使用权，其中包括：（1）已获学位的研究生
+\else
+本人完全了解北京工业大学有关保留、使用学位论文的规定，即：
+
+北京工业大学拥有在著作权法规定范围内学位论文的使用权，其中包括：（1）已获学位的研究生
 必须按学校规定提交学位论文，学校可以采用影印、缩印或其他复制手段保存研究生上交的
 学位论文；（2）为教学和科研目的，学校可以将公开的学位论文作为资料在图书馆、资料
 室等场所供校内师生阅读，或在校园网上供校内师生浏览部分内容\ifthu@master 。\else ；
@@ -2600,16 +2607,19 @@
     {\wuhao\thu@cdate\par}%
   \end{center}%
 }
+% 定义封面格式部分 <根据北京工业大学本科毕业论文格式参考模板（试行）修改>
 \newcommand{\thu@first@titlepage@other}{
   \begin{center}
-    \vspace*{-1.6cm}
+    \vspace*{-4cm}
     \parbox[b][2.4cm][t]{\textwidth}{%
       \ifthu@secret{\heiti\sanhao\thu@secretlevel\thu@secret@content}\else\rule{1cm}{0cm}\fi}
     \ifthu@bachelor
       \vskip0.65cm
-      {\ifcsname lishu\endcsname\yihao\lishu\ziju{0.5}\thu@schoolname\else\includegraphics{tsinghua.pdf}\fi}
+      % 嵌入北京工业大学图标
+      \includegraphics[scale=1]{BJUT.png}
       \par\vskip1.5cm
-      {\xiaochu\heiti\ziju{0.5}\textbf\thu@bachelor@subtitle}
+      % 北京工业大学毕业设计（论文）标题
+      {\fontsize{70pt}{70pt}\ziju{0.6}\lishu\textbf\thu@bachelor@subtitle}
       \vskip2.2cm\hskip0.8cm
       \noindent\heiti\xiaoer\thu@bachelor@title@pre\thu@title@sep
       \parbox[t]{12cm}{%

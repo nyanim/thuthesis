@@ -1,8 +1,11 @@
-[![Build Status](https://travis-ci.org/xueruini/thuthesis.svg?branch=master)](https://travis-ci.org/xueruini/thuthesis)
-[![Join the chat at https://gitter.im/thuthesis/Lobby](https://badges.gitter.im/thuthesis/Lobby.svg)](https://gitter.im/thuthesis/Lobby)
-[![Github downloads](https://img.shields.io/github/downloads/xueruini/thuthesis/total.svg)](https://github.com/xueruini/thuthesis/releases)
-[![GitHub release](https://img.shields.io/github/release/xueruini/thuthesis/all.svg)](https://github.com/xueruini/thuthesis/releases/latest)
-[![GitHub commits](https://img.shields.io/github/commits-since/xueruini/thuthesis/latest.svg)](https://github.com/xueruini/thuthesis/commits/master)
+# 北京工业大学本科毕业论文latex模板
+1.  为了偷懒fork了一下，以后隔离代码。请不要进行任何pr谢谢。
+2.  目前任务书没有latex模板，嵌入需要使用word生成pdf，请注意
+3.  模板需要下载仿宋和隶书字体
+4.  本模板并非官方模板，请在撰写时与指导老师以及北京工业大学本科生教务处核对格式。
+5.  感谢thuthesis提供充足的注释以及整洁的代码，节约了更改模板的时间
+
+> 以下是thuthesis的原始README
 
 # What's ThuThesis?
 ThuThesis is an abbreviation of <b>T</b>sing<b>h</b>ua <b>U</b>niversity <b>Thesis</b> LaTeX Template.

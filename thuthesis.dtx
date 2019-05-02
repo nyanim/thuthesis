@@ -1282,6 +1282,7 @@
 % \changes{v5.0.0}{2015/03/10}{不再将页面尺寸写入 dvi，因为已不支持 dvips，
 % 而该方案会使得在使用 tikzexternalize 时外部 PDF 图片 BBox 不对。}
 % \changes{v5.0.0}{2015/12/14}{用 \pkg{geometry} 简化设置。}
+% \changes{v5.5.1.BJUT.03}{2019/05/02}{根据工大要求调整页边距}
 %    \begin{macrocode}
 \RequirePackage{geometry}
 \geometry{
@@ -1291,11 +1292,11 @@
   nomarginpar}
 \ifthu@bachelor
   \geometry{
-    left=32mm,
+    top=30.1mm,
+    left=25mm,
     headheight=5mm,
     headsep=5mm,
-    textheight=227mm,
-    bottom=32mm,
+    bottom=29.5mm,
     footskip=12mm}
 \else
   \geometry{
@@ -1430,6 +1431,7 @@
 % 在使用 Windows Vista 或之后版本的系统时，\pkg{ctex} 宏包会默认使用微软雅黑字体，
 % 这可能会导致审查不合格。下面设置适合印刷的黑体，同时保持跨平台兼容性。
 % \changes{v5.5.0}{2019/01/06}{Windows 的中文字体开启伪粗。}
+% \changes{v5.5.1.BJUT.03}{2019/05/02}{增加隶书伪粗，调整Mac下字体黑体粗体设置}
 %    \begin{macrocode}
 \ifthenelse{\equal{\thu@fontset}{windows}}{
   \xeCJKsetup{EmboldenFactor=2}
@@ -1443,6 +1445,7 @@
   \setCJKsansfont[AutoFakeBold]{SimHei}
   \setCJKfamilyfont{zhsong}[AutoFakeBold]{SimSun}
   \setCJKfamilyfont{zhhei}[AutoFakeBold]{SimHei}
+  \setCJKfamilyfont{zhli}[AutoFakeBold]{LiSu}
 }{}
 %    \end{macrocode}
 %
@@ -1460,8 +1463,10 @@
          UprightFont = * Light,
             BoldFont = * Bold,
     ]{Songti SC}
-  \setCJKfamilyfont{zhhei}[BoldFont=* Medium]{Heiti SC}
+  \setCJKfamilyfont{zhhei}[BoldFont=* Bold]{Heiti SC}
   \setCJKfamilyfont{zhkai}[BoldFont=* Bold]{Kaiti SC}
+  \setCJKfamilyfont{zhli}[BoldFont=* Bold]{LiSu}
+  \newcommand*{\lishu}{\CJKfamily{zhli}}
   \xeCJKsetwidth{‘’“”}{1em}
 }{}
 %    \end{macrocode}
@@ -1719,7 +1724,7 @@
   \fancyhead[C]{\lishu \sanhao 北京工业大学毕业设计（论文）}
   \fancyfoot{}
   \fancyfoot[C]{\wuhao\thepage}
-  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{thu@headings}{%
   \fancyhead{}
@@ -2637,12 +2642,12 @@
     \parbox[b][2.4cm][t]{\textwidth}{%
       \ifthu@secret{\heiti\sanhao\thu@secretlevel\thu@secret@content}\else\rule{1cm}{0cm}\fi}
     \ifthu@bachelor
-      \vskip1.6cm
+      \vskip2cm
       % 嵌入北京工业大学图标
       \includegraphics[scale=1]{BJUT.png}
       \par\vskip1cm
       % 北京工业大学毕业设计（论文）标题
-      {\fontsize{70pt}{50pt}\ziju{0.6}\lishu\textbf\thu@bachelor@subtitle}
+      {\fontsize{70pt}{50pt}\ziju{0.5}\bfseries\lishu\thu@bachelor@subtitle}
       \vskip2.2cm
     \else
       \vskip0.8cm
@@ -3440,6 +3445,7 @@
 %
 % 在模板文档结束时即装入配置文件，这样用户就能在导言区进行相应的修改。
 % \changes{v2.5}{2006/05/13}{不用 \cs{CJKcaption}，在导言区直接引入配置文件。}
+% \changes{v5.5.1.BJUT.03}{2019/05/02}{根据工大模板修改页边距}
 %    \begin{macrocode}
 \AtEndOfClass{\sloppy}
 %</cls>
@@ -3456,8 +3462,8 @@
 \RequirePackage{newpxtext}
 \RequirePackage{newpxmath}
 \RequirePackage[
-  top=2.5cm, bottom=2.5cm,
-  left=4cm, right=2cm,
+  top=2.54cm, bottom=2.54cm,
+  left=3.17cm, right=3.17cm,
   headsep=3mm]{geometry}
 \RequirePackage{array,longtable,booktabs}
 \RequirePackage{listings}

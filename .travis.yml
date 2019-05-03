@@ -35,10 +35,15 @@ install:
     fontaxes kastrup listings lm metalogo newpx newtx palatino pxfonts thumbpdf
     txfonts xkeyval
 
+  - mkdir -p /usr/share/fonts/truetype
+  - cp font/* /usr/share/fonts/truetype
+  - mkfontscale
+  - mkfontdir
+  - fc-cache -fv
+
 before_script:
   - sed -i 's/\[RawFeature={vertical:}\]{FangSong}/\[Extension=.otf,RawFeature={vertical:}\]{FandolFang-Regular}/' shuji.tex
 
 script:
-  - make thesis
-  - make shuji
-  - make doc
+  - xelatex thusthesis.ins
+  - latexmk -xelatex main

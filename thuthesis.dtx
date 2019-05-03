@@ -1469,6 +1469,26 @@
   \newcommand*{\lishu}{\CJKfamily{zhli}}
   \xeCJKsetwidth{‘’“”}{1em}
 }{}
+
+\ifthenelse{\equal{\thu@fontset}{linux}}{
+  \setCJKmainfont[
+         UprightFont = * Light,
+            BoldFont = * Bold,
+          ItalicFont = Kaiti SC,
+      BoldItalicFont = Kaiti SC Bold,
+    ]{Songti SC}
+  \setCJKsansfont[BoldFont=* Medium]{Heiti SC}
+  \setCJKfamilyfont{zhsong}[
+         UprightFont = * Light,
+            BoldFont = * Bold,
+    ]{Songti SC}
+  \setCJKfamilyfont{zhhei}[AutoFakeBold]{Heiti SC}
+  \setCJKfamilyfont{zhkai}[BoldFont=* Bold]{Kaiti SC}
+  \setCJKfamilyfont{zhli}[AutoFakeBold]{LiSu}
+  \newcommand*{\lishu}{\CJKfamily{zhli}}
+  \xeCJKsetwidth{‘’“”}{1em}
+}{}
+
 %    \end{macrocode}
 %
 % \begin{macro}{\normalsize}

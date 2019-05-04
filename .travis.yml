@@ -13,4 +13,7 @@ before_script:
   - sed -i 's/\[RawFeature={vertical:}\]{FangSong}/\[Extension=.otf,RawFeature={vertical:}\]{FandolFang-Regular}/' shuji.tex
 
 script:
-  - latexmk -xelatex main
+  - xelatex -synctex=1 -interaction=nonstopmode -file-line-error -pdf main.tex
+  - bibtex main.aux
+  - xelatex -synctex=1 -interaction=nonstopmode -file-line-error -pdf main.tex
+  - xelatex -synctex=1 -interaction=nonstopmode -file-line-error -pdf main.tex
